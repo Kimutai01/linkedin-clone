@@ -1,10 +1,11 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Navbar from "./components/header/Navbar";
 
 function App() {
   return (
     <div className="app">
-    <h2>We are building the linkedin clone</h2>
+      <Navbar />
     </div>
   );
 }
