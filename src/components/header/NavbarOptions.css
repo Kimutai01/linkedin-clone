@@ -9,3 +9,12 @@
 .navbarOption:hover {
   color: black;
 }
+.navbarOption__title {
+  font-size: 12px;
+  font-weight: 400;
+}
+.navbarOption__icon {
+  object-fit: contain;
+  height: 25px !important;
+  width: 25px !important;
+}
