@@ -5,9 +5,8 @@ import SearchIcon from "@mui/icons-material/Search";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <h2>This is the navbar</h2>
       <div className="navbar__left">
-        <RiLinkedinFill />
+        <RiLinkedinFill className="linkedin__logo" />
         <div className="navbar__search">
           <SearchIcon />
           <input type="text" />
