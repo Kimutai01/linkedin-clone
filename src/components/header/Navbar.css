@@ -1,4 +1,7 @@
 .navbar {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 0.1px solid lightgray;
 }
 .linkedin__logo {
   font-size: 2.5rem;
@@ -22,4 +25,8 @@
   outline: none;
   border: none;
   background: none;
+}
+
+.navbar__right {
+  display: flex;
 }
