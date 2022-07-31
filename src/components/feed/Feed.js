@@ -6,6 +6,7 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import "./Feed.css";
 import InputOption from "./InputOption";
+import Post from "./Post";
 
 const Feed = () => {
   return (
@@ -28,8 +29,13 @@ const Feed = () => {
             color="#7FC15E"
           />
         </div>
-        {/* post */}
       </div>
+      {/* post */}
+      <Post
+        name="Kiprotich kimutai"
+        description="This is a test"
+        message="Wow this worked"
+      />
     </div>
   );
 };
