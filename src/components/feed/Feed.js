@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CreateIcon from "@mui/icons-material/Create";
 import ImageIcon from "@mui/icons-material/Image";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
@@ -7,11 +7,32 @@ import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import "./Feed.css";
 import InputOption from "./InputOption";
 import Post from "./Post";
+import { db } from "../../firebase";
+import firebase from "firebase/compat";
 
 const Feed = () => {
+  const [input, setInput] = useState("");
   const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    db.collection("posts").onSnapshot((snapshot) =>
+      setPosts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+    );
+  }, []);
   const sendPost = (e) => {
     e.preventDefault();
+    db.collection("posts").add({
+      name: "kiprotich kimutai",
+      description: "test",
+      message: input,
+      photoUrls: "",
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
   };
   return (
     <div className="feed">
@@ -19,7 +40,11 @@ const Feed = () => {
         <div className="feed__input">
           <CreateIcon />
           <form>
-            <input type="text" />
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
             <button type="submit" onClick={sendPost}>
               send
             </button>
