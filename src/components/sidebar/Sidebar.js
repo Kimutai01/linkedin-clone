@@ -21,9 +21,9 @@ const Sidebar = () => {
           <p>views on post</p>
           <p className="sidebar__statcount">749</p>
         </div>
-        <div className="sidebar__button">
-          <p>Recent</p>
-        </div>
+      </div>
+      <div className="sidebar__button">
+        <p>Recent</p>
       </div>
     </div>
   );
